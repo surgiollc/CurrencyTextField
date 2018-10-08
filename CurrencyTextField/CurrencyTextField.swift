@@ -43,7 +43,7 @@ import UIKit
     
     override open func willMove(toSuperview newSuperview: UIView!) {
         if newSuperview != nil {
-            NotificationCenter.default.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name:NSNotification.Name.UITextFieldTextDidChange, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(UITextInputDelegate.textDidChange(_:)), name:UITextField.textDidChangeNotification, object: self)
         } else {
             NotificationCenter.default.removeObserver(self)
         }
