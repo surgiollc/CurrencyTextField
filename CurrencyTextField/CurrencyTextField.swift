@@ -55,9 +55,9 @@ import UIKit
         let cursorOffset = getOriginalCursorPosition();
         
         let cleanNumericString : String = getCleanNumberString()
-        let textFieldLength = self.text?.characters.count
+        let textFieldLength = self.text?.count
        
-        if cleanNumericString.characters.count > maxDigits{
+        if cleanNumericString.count > maxDigits{
             self.text = previousValue
         }
         else{
@@ -114,7 +114,7 @@ import UIKit
     
     fileprivate func setCursorOriginalPosition(_ cursorOffset: Int, oldTextFieldLength : Int?){
         
-        let newLength = self.text?.characters.count
+        let newLength = self.text?.count
         let startPosition : UITextPosition = self.beginningOfDocument
         if let oldTextFieldLength = oldTextFieldLength, let newLength = newLength, oldTextFieldLength > cursorOffset{
             let newOffset = newLength - oldTextFieldLength + cursorOffset
